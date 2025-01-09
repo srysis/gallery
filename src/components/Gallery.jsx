@@ -13,7 +13,7 @@ function Gallery() {
 	const [isInFullscreen, toggleFullscreen] = React.useState(false);
 
 	const [currentCharacter, setCurrentCharacter] = React.useState("");
-	const [currentCharacterImage, setCurrentCharacterImage] = React.useState("");
+	const [imageIndexToPass, setImageIndexToPass] = React.useState(0);
 
 	function toggleFullscreenFromChildComponent(value) {
 		toggleFullscreen(value);
@@ -36,8 +36,8 @@ function Gallery() {
 		setCurrentCharacter(character);
 	}
 
-	function setCharacterImageFromChildComponent(characterImage) {
-		setCurrentCharacterImage(characterImage);
+	function setImageFromChildComponent(image_index) {
+		setImageIndexToPass(image_index);
 	}
 
 	return(
@@ -46,11 +46,11 @@ function Gallery() {
 			{ isGalleryActive 
 				&& <GalleryContainer 
 						character={currentCharacter} 
-						setCurrentCharacterImageFunction={setCharacterImageFromChildComponent} 
+						setCurrentImageFunction={setImageFromChildComponent} 
 						toggleFullscreenFunction={toggleFullscreenFromChildComponent} 
 					/> 
 			}
-			{ isInFullscreen && <GalleryFullscreen toggleFullscreenFunction={toggleFullscreenFromChildComponent} currentImage={currentCharacterImage} /> }
+			{ isInFullscreen && <GalleryFullscreen toggleFullscreenFunction={toggleFullscreenFromChildComponent} passedImageIndex={imageIndexToPass} /> }
 		</main>
 	)
 }
