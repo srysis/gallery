@@ -4,10 +4,10 @@ function GallerySwitches({toggleGalleryFunction, setCharacterFunction}) {
 	
 	return(
 		<div id="gallery_switches">
-			<span><a onClick={() => { setCharacterFunction("Alice"); toggleGalleryFunction(true) }} >Alice</a></span>
-			<span><a onClick={() => { setCharacterFunction("Jane"); toggleGalleryFunction(true) }} >Jane</a></span>
-			<span><a onClick={() => { setCharacterFunction("Pandemonica"); toggleGalleryFunction(true) }} >Pandemonica</a></span>
-			<span><a onClick={() => { setCharacterFunction("Willow"); toggleGalleryFunction(true) }} >Willow</a></span>
+			<span><button type="button" onClick={() => { setCharacterFunction("Alice"); toggleGalleryFunction(true) }} >Alice</button></span>
+			<span><button type="button" onClick={() => { setCharacterFunction("Jane"); toggleGalleryFunction(true) }} >Jane</button></span>
+			<span><button type="button" onClick={() => { setCharacterFunction("Pandemonica"); toggleGalleryFunction(true) }} >Pandemonica</button></span>
+			<span><button type="button" onClick={() => { setCharacterFunction("Willow"); toggleGalleryFunction(true) }} >Willow</button></span>
 		</div>
 	)
 }
